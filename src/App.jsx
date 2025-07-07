@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import FreeBoardPage from "./pages/freeBoardPage";
 import CommentPage from "./pages/CommentPage";
-import WriterPage from "./pages/writerPage";
+import WriterPage from "./pages/WriterPage";
 import SecretPage from "./pages/SecretPage";
 import SecretwriterPage from "./pages/SecretwriterPage";
 import HomePage from "./pages/HomePage";
