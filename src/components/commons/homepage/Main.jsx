@@ -24,7 +24,7 @@ export default function Main() {
 
     const fetchFreePosts = () => {
         axios
-            .get("https://silversieon.store:8080/api/posts/free/summary")
+            .get("https://silversieon.store/api/posts/free/summary")
             .then((res) => {
                 setFree(res.data.data);
             })
@@ -36,7 +36,7 @@ export default function Main() {
 
     const fetchSecretPosts = () => {
         axios
-            .get("https://silversieon.store:8080/api/posts/secret/summary")
+            .get("https://silversieon.store/api/posts/secret/summary")
             .then((res) => {
                 setSecret(res.data.data);
             })
