@@ -26,7 +26,7 @@ export default function SecretwriterPage() {
           "content": text,
           "isAnonymous": isAnonymous,
           "postType": "secret"
-        }).then((response) => {
+        }).then(() => {
             // 작성 후 게시판 페이지로 이동
         navigate("/SecretPage");
     })

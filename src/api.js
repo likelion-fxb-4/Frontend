@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://43.201.107.45:8080', // 🛠️ 실제 API 도메인으로 교체
+  baseURL: 'http://silversieon.store:8080', // 🛠️ 실제 API 도메인으로 교체
   headers: {
     'Content-Type': 'application/json'
   }
