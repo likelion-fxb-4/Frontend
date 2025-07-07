@@ -26,7 +26,7 @@ export default function LoginPage({ setUserInfo }) {
             })
             .then((res) => {
                 const token = res.data.token;
-                localStorage.setItem("token", token);
+                localStorage.setItem("token", token); // 응답에서 받은 토큰 localstorage에 저장
 
                 return axios.get("http://localhost:8080/api/user/me", {
                     headers: {

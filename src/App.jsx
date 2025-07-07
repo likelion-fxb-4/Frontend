@@ -14,7 +14,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route element={<RootLayout />}>
-          <Route index element={<HomePage userInfo={userInfo} />}/>
+          <Route index element={<HomePage userInfo={userInfo} setUserInfo={setUserInfo} />}/>
           <Route path="login" element={<LoginPage setUserInfo={setUserInfo} />}/>
         </Route>
       </Routes>

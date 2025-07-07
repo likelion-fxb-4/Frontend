@@ -16,8 +16,17 @@ import {
     AdSection,
     Adimg,
 } from "./Info.styles";
+import { useNavigate } from "react-router-dom";
 
-export default function Info({ name, email}) {
+export default function Info({ name, email, setUserInfo}) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        localStorage.removeItem("token");
+        setUserInfo(null);
+        navigate("/login");
+    };
+
     return (
         <Container>
             <InfoSection>
@@ -27,7 +36,7 @@ export default function Info({ name, email}) {
                     <Email>{email}</Email>
                     <ButtonSection>
                         <Button>내 정보</Button>
-                        <Button>로그아웃</Button>
+                        <Button onClick={handleClick}>로그아웃</Button>
                     </ButtonSection>
                 </ProfileSection>
             </InfoSection>

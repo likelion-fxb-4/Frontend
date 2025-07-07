@@ -48,7 +48,7 @@ export const ButtonSection = styled.div`
   margin-top: 10px;
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
