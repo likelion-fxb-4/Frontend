@@ -8,7 +8,8 @@ export const Container = styled.div`
     padding: 10px 25px;
     width: 100%;
     background-color: white;
-    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: space-between;
 `;
 
 export const LogoButton = styled(Link)`
@@ -23,7 +24,7 @@ export const Logo = styled.img`
 
 export const TitleSection = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin-left: 10px;
 `;
@@ -51,7 +52,6 @@ export const LoginButton = styled(Link)`
     border-radius: 15px;
     font-size: 17px;
     cursor: pointer;
-    margin-left: 1350px;
     font-size: 15px;
     padding: 0 10px;
     transition: transform 0.2s ease, background-color 0.2s ease;
@@ -61,4 +61,8 @@ export const LoginButton = styled(Link)`
         transform: scale(1.05);
         color: black;
     }
+`;
+
+export const TitleContainer = styled.div`
+    text-align: center;
 `;
