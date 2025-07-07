@@ -16,7 +16,7 @@ export const Adimg = styled.img`
 
 export const BoardSection = styled.div`
   width: 1250px;
-`;
+`; 
 
 export const BoardGrid = styled.div`
   display: grid;
@@ -41,6 +41,7 @@ export const FreeBoardTitle = styled(Link)`
   width: 100%;
   border-bottom: 1px solid grey;
   padding-bottom: 5px;
+  text-decoration: none;
 
   &:hover {
     color: red;
@@ -56,6 +57,7 @@ export const SecretBoardTitle = styled(Link)`
   width: 100%;
   border-bottom: 1px solid grey;
   padding-bottom: 5px;
+  text-decoration: none;
 
   &:hover {
     color: red;
