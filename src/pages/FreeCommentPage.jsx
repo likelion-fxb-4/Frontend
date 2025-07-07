@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import CommentCard from "../components/CommentCard";
 import api from "../api";
 
-export default function CommentPage() {
+export default function FreeCommentPage() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [commentInput, setCommentInput] = useState("");
@@ -16,7 +16,7 @@ export default function CommentPage() {
 
   useEffect(() => {
     // 게시글 상세 정보 가져오기
-    api.get(`/api/posts/secret/${id}`)
+    api.get(`/api/posts/free/${id}`)
       .then((res) => {
         if (res.data.success) {
           setPost(res.data.data);

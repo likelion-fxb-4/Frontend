@@ -23,10 +23,10 @@ export default function WriterPage() {
     });
 
     api.post("/api/posts", {
-      "title": title,
-      "content": text,
-      "isAnonymous": isAnonymous,
-      "postType": "free"
+    "title": title,
+    "content": text,
+    "isAnonymous": isAnonymous,
+    "postType": "free"
     }).then((response) => {
         // 작성 후 게시판 페이지로 이동
     navigate("/FreeBoardPage");
