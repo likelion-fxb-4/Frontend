@@ -5,4 +5,5 @@ export const Container = styled.div`
     flex-direction: row;
     padding: 30px;
     gap: 30px;
+    box-sizing: border-box;
 `;

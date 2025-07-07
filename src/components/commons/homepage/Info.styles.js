@@ -52,7 +52,7 @@ export const Button = styled.button`
   padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 10.7px;
   text-decoration: none;
   color: black;
   background-color: white;

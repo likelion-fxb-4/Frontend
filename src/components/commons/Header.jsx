@@ -5,7 +5,8 @@ import {
     TitleSection,
     SubTitle,
     MainTitle,
-    LoginButton
+    LoginButton,
+    TitleContainer,
 } from "./Header.styles";
 import { useLocation } from "react-router-dom";
 import Hlogo from "../../assets/icons/logo.png";
@@ -17,12 +18,14 @@ export default function Header() {
 
     return (
         <Container>
-            <LogoButton to="/">
+            <TitleSection>
+                <LogoButton to="/">
                 <Logo src={Hlogo} alt="에브리타임 로고" />
             </LogoButton>
-            <TitleSection>
+            <TitleContainer>
                 <SubTitle>에브리타임</SubTitle>
                 <MainTitle>서경대</MainTitle>
+            </TitleContainer>
             </TitleSection>
 
             {!isLoginPage && !hasToken && (
