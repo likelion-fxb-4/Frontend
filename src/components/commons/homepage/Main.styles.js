@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -31,13 +32,34 @@ export const BoardBox = styled.div`
   box-shadow: 0 1px 1px rgb(0,0,0);
 `;
 
-export const BoardTitle = styled.p`
+export const FreeBoardTitle = styled(Link)`
   font-size: 16px;
   font-weight: bolder;
   color: red;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
   border-bottom: 1px solid grey;
   padding-bottom: 5px;
+
+  &:hover {
+    color: red;
+  }
+`;
+
+export const SecretBoardTitle = styled(Link)`
+  font-size: 16px;
+  font-weight: bolder;
+  color: red;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+
+  &:hover {
+    color: red;
+  }
 `;
 
 export const ItemText = styled.p`

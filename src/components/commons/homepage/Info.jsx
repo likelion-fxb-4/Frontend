@@ -23,7 +23,10 @@ export default function Info({ name, email, setUserInfo}) {
 
     const handleClick = () => {
         localStorage.removeItem("token");
-        setUserInfo(null);
+        setUserInfo({
+            name: "홍길동",
+            email: "2021304034@skuniv.ac.kr",
+        });
         navigate("/login");
     };
 

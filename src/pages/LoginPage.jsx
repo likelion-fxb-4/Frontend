@@ -21,25 +21,20 @@ export default function LoginPage({ setUserInfo }) {
 
         axios
             .post("http://localhost:8080/api/auths/login", {
-                username: id,    
-                password: pass, 
+                username: id,
+                password: pass,
             })
             .then((res) => {
-                const token = res.data.token;
-                localStorage.setItem("token", token); // 응답에서 받은 토큰 localstorage에 저장
+                const userData = res.data.data;
 
-                return axios.get("http://localhost:8080/api/user/me", {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-            })
-            .then((userRes) => {
-                const userData = userRes.data;
+                // accessToken 저장
+                localStorage.setItem("token", userData.accessToken);
+
+                // 사용자 정보 저장
                 setUserInfo({
                     name: userData.name,
-                    email: userData.email,
-                })
+                    email: userData.username,  // 이메일이 username 필드에 들어 있음
+                });
 
                 navigate("/");
             })
@@ -52,36 +47,35 @@ export default function LoginPage({ setUserInfo }) {
             });
     };
 
-
     const handleIdChange = (e) => {
         setId(e.target.value);
-    }
+    };
 
     const handlePassChange = (e) => {
         setPass(e.target.value);
-    }
+    };
 
     return (
         <Container>
             <LoginText>로그인</LoginText>
             <Form onSubmit={handleSubmit}>
-            <Input
-            placeholder="아이디"
-            value={id}
-            onChange={handleIdChange}
-            required
-            />
-            <Input
-            placeholder="비밀번호"
-            type="password"
-            value={pass}
-            onChange={handlePassChange}
-            required
-            />
-            <Button type="submit" disabled={isLoading}>
-                {isLoading ? "로딩 중" : "로그인"}
-            </Button>
+                <Input
+                    placeholder="아이디"
+                    value={id}
+                    onChange={handleIdChange}
+                    required
+                />
+                <Input
+                    placeholder="비밀번호"
+                    type="password"
+                    value={pass}
+                    onChange={handlePassChange}
+                    required
+                />
+                <Button type="submit" disabled={isLoading}>
+                    {isLoading ? "로딩 중" : "로그인"}
+                </Button>
             </Form>
         </Container>
-  );
+    );
 }

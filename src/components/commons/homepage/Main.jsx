@@ -4,7 +4,8 @@ import {
     BoardSection,
     BoardGrid,
     BoardBox,
-    BoardTitle,
+    FreeBoardTitle,
+    SecretBoardTitle,
     ItemText,
 } from "./Main.styles";
 import ad4 from "../../../assets/images/ad4.png";
@@ -17,18 +18,30 @@ export default function Main() {
     const [secret, setSecret] = useState([]);
 
     useEffect(() => {
-        fetchPosts();
+        fetchFreePosts();
+        fetchSecretPosts();
     }, []);
 
-    const fetchPosts = () => {
+    const fetchFreePosts = () => {
         axios
-            .get("")
+            .get("http://43.201.107.45:8080/api/posts/free/summary")
             .then((res) => {
-                setFree(res.data.free);
-                setSecret(res.data.secret);
+                setFree(res.data.data);
             })
             .catch((err) => {
-                alert("에러가 발생하였습니다.");
+                alert("자유게시판 요청 실패!");
+                console.log(err);
+            })
+    };
+
+    const fetchSecretPosts = () => {
+        axios
+            .get("http://43.201.107.45:8080/api/posts/secret/summary")
+            .then((res) => {
+                setSecret(res.data.data);
+            })
+            .catch((err) => {
+                alert("비밀게시판 요청 실패!");
                 console.log(err);
             })
     };
@@ -39,16 +52,16 @@ export default function Main() {
             <BoardSection>
                 <BoardGrid>
                     <BoardBox>
-                        <BoardTitle>자유게시판</BoardTitle>
+                        <FreeBoardTitle to="/FreeBoardPage">자유게시판</FreeBoardTitle>
                         {free.map((post) => (
                             <ItemText key={post.id}>{post.title}</ItemText>
                         ))}
                     </BoardBox>
                     <BoardBox>
-                        <BoardTitle>비밀게시판</BoardTitle>
+                        <SecretBoardTitle to="/SecretPage">비밀게시판</SecretBoardTitle>
                         {secret.map((post) => (
                             <ItemText key={post.id}>{post.title}</ItemText>
-                        ))}                        
+                        ))}
                     </BoardBox>
                 </BoardGrid>
             </BoardSection>
