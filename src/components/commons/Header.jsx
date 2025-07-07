@@ -13,7 +13,8 @@ import Hlogo from "../../assets/icons/logo.png";
 export default function Header() {
     const location = useLocation();
     const isLoginPage = location.pathname === "/login";
-    
+    const hasToken = !!localStorage.getItem("token");
+
     return (
         <Container>
             <LogoButton to="/">
@@ -23,7 +24,10 @@ export default function Header() {
                 <SubTitle>에브리타임</SubTitle>
                 <MainTitle>서경대</MainTitle>
             </TitleSection>
-            {!isLoginPage && <LoginButton to="/login">로그인</LoginButton>}
+
+            {!isLoginPage && !hasToken && (
+                <LoginButton to="/login">로그인</LoginButton>
+            )}
         </Container>
     );
 }
