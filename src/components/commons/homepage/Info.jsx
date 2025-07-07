@@ -1,3 +1,7 @@
+import ad1 from "../../../assets/images/ad1.png";
+import ad2 from "../../../assets/images/ad2.png";
+import ad3 from "../../../assets/images/ad3.png";
+import profile from "../../../assets/icons/profile.png";
 import {
     Container,
     InfoSection,
@@ -6,8 +10,7 @@ import {
     Name,
     Id,
     ButtonSection,
-    MyInfo,
-    Logout,
+    Button,
     OtherButtonSection,
     OtherButton,
     AdSection,
@@ -19,12 +22,12 @@ export default function Info() {
         <Container>
             <InfoSection>
                 <ProfileSection>
-                    <ProfileLogo />
+                    <ProfileLogo src={profile} alt="프로필" />
                     <Name>박태근</Name>
                     <Id>power1415</Id>
                     <ButtonSection>
-                        <MyInfo>내 정보</MyInfo>
-                        <Logout>로그아웃</Logout>
+                        <Button>내 정보</Button>
+                        <Button>로그아웃</Button>
                     </ButtonSection>
                 </ProfileSection>
             </InfoSection>
@@ -34,9 +37,9 @@ export default function Info() {
                 <OtherButton>⭐ 내 스크랩</OtherButton>
             </OtherButtonSection>
             <AdSection>
-                <Adimg />
-                <Adimg />
-                <Adimg />
+                <Adimg src={ad1} alt="광고1" />
+                <Adimg src={ad2} alt="광고2" />
+                <Adimg src={ad3} alt="광고3" />
             </AdSection>
         </Container>
     );
