@@ -20,7 +20,7 @@ export default function LoginPage({ setUserInfo }) {
         setIsLoading(true);
 
         axios
-            .post("http://localhost:8080/api/auths/login", {
+            .post("https://silversieon.store:8080/api/auths/login", {
                 username: id,
                 password: pass,
             })
