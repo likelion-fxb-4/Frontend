@@ -15,7 +15,6 @@ export default function WriterPage() {
       return;
     }
 
-    // 작성된 게시글을 저장하거나 전송하는 로직이 들어가야 합니다.
     console.log({
       title,
       text,
@@ -28,7 +27,6 @@ export default function WriterPage() {
     "isAnonymous": isAnonymous,
     "postType": "free"
     }).then(() => {
-        // 작성 후 게시판 페이지로 이동
     navigate("/FreeBoardPage");
     })
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BoardCard from "../components/BoardCard";
-import api from "../api"; // ✅ axios 인스턴스 불러오기
+import api from "../api"; 
 
 export default function SecretPage() {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export default function SecretPage() {
     api.get("/api/posts/secret")
       .then((res) => {
         if (res.data.success) {
-          setPosts(res.data.data); // ✅ 백엔드에서 전달된 data 사용
+          setPosts(res.data.data);
         } else {
           alert("게시글을 불러오지 못했습니다.");
         }
