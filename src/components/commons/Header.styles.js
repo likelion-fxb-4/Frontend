@@ -51,7 +51,7 @@ export const LoginButton = styled(Link)`
     border-radius: 15px;
     font-size: 17px;
     cursor: pointer;
-    margin-left: 1250px;
+    margin-left: 1350px;
     font-size: 15px;
     padding: 0 10px;
     transition: transform 0.2s ease, background-color 0.2s ease;
