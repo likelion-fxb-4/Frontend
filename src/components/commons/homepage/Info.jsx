@@ -8,7 +8,7 @@ import {
     ProfileSection,
     ProfileLogo,
     Name,
-    Id,
+    Email,
     ButtonSection,
     Button,
     OtherButtonSection,
@@ -17,14 +17,14 @@ import {
     Adimg,
 } from "./Info.styles";
 
-export default function Info() {
+export default function Info({ name, email}) {
     return (
         <Container>
             <InfoSection>
                 <ProfileSection>
                     <ProfileLogo src={profile} alt="프로필" />
-                    <Name>박태근</Name>
-                    <Id>power1415</Id>
+                    <Name>{name}</Name>
+                    <Email>{email}</Email>
                     <ButtonSection>
                         <Button>내 정보</Button>
                         <Button>로그아웃</Button>

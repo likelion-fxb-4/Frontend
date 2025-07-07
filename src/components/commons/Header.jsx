@@ -7,9 +7,13 @@ import {
     MainTitle,
     LoginButton
 } from "./Header.styles";
+import { useLocation } from "react-router-dom";
 import Hlogo from "../../assets/icons/logo.png";
 
 export default function Header() {
+    const location = useLocation();
+    const isLoginPage = location.pathname === "/login";
+    
     return (
         <Container>
             <LogoButton to="/">
@@ -19,7 +23,7 @@ export default function Header() {
                 <SubTitle>에브리타임</SubTitle>
                 <MainTitle>서경대</MainTitle>
             </TitleSection>
-            <LoginButton to="/login">로그인</LoginButton>
+            {!isLoginPage && <LoginButton to="/login">로그인</LoginButton>}
         </Container>
     );
 }

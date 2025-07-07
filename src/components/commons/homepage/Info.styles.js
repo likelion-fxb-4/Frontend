@@ -36,7 +36,7 @@ export const Name = styled.p`
   margin: 0;
 `;
 
-export const Id = styled.p`
+export const Email = styled.p`
   font-size: 14px;
   color: gray;
   margin: 0;

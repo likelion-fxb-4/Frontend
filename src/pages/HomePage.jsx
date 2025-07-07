@@ -4,10 +4,10 @@ import {
 import Info from "../components/commons/homepage/Info";
 import Main from "../components/commons/homepage/Main";
 
-export default function HomePage() {
+export default function HomePage({userInfo}) {
     return (
         <Container>
-            <Info />
+            <Info name={userInfo.name} email={userInfo.email} />
             <Main />
         </Container>
     );
