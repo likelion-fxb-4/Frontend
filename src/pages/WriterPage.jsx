@@ -27,7 +27,7 @@ export default function WriterPage() {
     "content": text,
     "isAnonymous": isAnonymous,
     "postType": "free"
-    }).then((response) => {
+    }).then(() => {
         // 작성 후 게시판 페이지로 이동
     navigate("/FreeBoardPage");
     })
